@@ -1,18 +1,28 @@
+:root {
+    --primary: #5a4429;
+    --dark: #444441;
+    --light: #ddd1c0;
+    --cover: #978265;
+    --shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 body {
-    background-color: white;
+    background: var(--light);
+    color: var(--primary);
     font-size: 100%;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-align: center;
+    
 }
 
 .container {
     display: grid;
-    width: 60%;
-    margin: 20px auto;
+    width: 90%;
+    margin: 10px auto;
     overflow: auto;
-    padding: 25px;
+    padding: 10px;
 }
 
 .top-section {
@@ -22,21 +32,23 @@ body {
     align-items: center;
     gap: 5px;
     padding: 20px;
-    text-align: center;
-    background-color: brown;
+    /* background-color: brown; */
 }
 
 
 .quiz-area {
-    background-color: blue;
+    margin-top: 10px;
+    border: 1px solid var(--dark);
+    /* background: url('/assets/img/minator-yang-ZzQeYkwpv_c-unsplash_smaller.jpg') no-repeat center; */
 }
 
 .quiz-panel {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    margin: 3% 5% 3% 5% ;
     gap: 10px;
-    background-color: blueviolet;
+    background: var(--cover);
+    
 }
 
 #question-result {
@@ -48,5 +60,20 @@ body {
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    margin: 5%;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    justify-content: space-evenly;
+}
+
+.social-links i {
+    font-size: 160%;
+    margin: 1%;
+    padding: 5px;
+    color: var(--dark);
+}
