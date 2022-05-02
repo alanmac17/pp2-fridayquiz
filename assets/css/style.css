@@ -2,7 +2,7 @@
     --primary: #5a4429;
     --dark: #444441;
     --light: #ddd1c0;
-    --cover: #978265;
+    --cover: rgba(151, 130, 101, 0.6);
     --shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
@@ -19,35 +19,27 @@ body {
 
 .container {
     display: grid;
-    width: 90%;
+    width: 70%;
     margin: 10px auto;
     overflow: auto;
     padding: 10px;
 }
 
+.heading {
+    font-size: 3em;
+    margin: auto;
+}
+
 .top-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 5px;
-    padding: 20px;
-    /* background-color: brown; */
 }
 
-.mid-section {
-    border: 1px solid var(--dark);
-}
 
-#story-text {
-    line-height: 1rem;
-}
-
-.quiz-area {
+.quiz-section {
     margin-top: 10px;
-    border: 1px solid var(--dark);
-    /* background: url('/assets/img/minator-yang-ZzQeYkwpv_c-unsplash_smaller.jpg') no-repeat center; */
-}
+   }
 
 .quiz-panel {
     display: flex;
@@ -55,15 +47,17 @@ body {
     margin: 1% ;
     gap: 10px;
     padding: 0 2em 2em;
-    background: var(--cover);    
+    background: var(--cover);
+    border: 1px solid var(--dark); 
+    max-width: 500px;
+    margin-left: auto;
+margin-right: auto; 
 }
 
 #question-result {
     font-weight: bold;
 }
 
-#question-area {
-}
 
 #answers-area{
     display: grid;
@@ -73,6 +67,11 @@ body {
     margin: 1%;
 }
 
+.message-section {
+    max-width: 500px;
+    margin-left: auto;
+margin-right: auto;
+}
 
 footer {
     display: flex;
@@ -93,3 +92,7 @@ footer {
 #scoreboard {
     visibility: hidden;
 }
+
+/* <div id="scoreboard">
+                Your score is <span id="current-score">0</span>/10
+            </div> */
