@@ -1,0 +1,41 @@
+body {
+    background-color: white;
+    font-size: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    width: 60%;
+    margin: 20px auto;
+    overflow: auto;
+    padding: 25px;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 20px;
+}
+
+.quiz-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 5px;
+    background-color: blue;
+}
+
+#answers-area{
+	display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+	margin: 10px;
+}
+
