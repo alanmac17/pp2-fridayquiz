@@ -4,6 +4,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .container {
@@ -21,21 +22,31 @@ body {
     align-items: center;
     gap: 5px;
     padding: 20px;
+    text-align: center;
+    background-color: brown;
 }
 
+
 .quiz-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    gap: 5px;
     background-color: blue;
 }
 
-#answers-area{
-	display: flex;
+.quiz-panel {
+    display: flex;
     flex-direction: column;
-    flex-wrap:wrap;
-	margin: 10px;
+    padding: 30px;
+    gap: 10px;
+    background-color: blueviolet;
+}
+
+#question-result {
+    font-weight: bold;
+}
+
+#answers-area{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
