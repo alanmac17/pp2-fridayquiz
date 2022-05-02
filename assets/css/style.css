@@ -35,6 +35,13 @@ body {
     /* background-color: brown; */
 }
 
+.mid-section {
+    border: 1px solid var(--dark);
+}
+
+#story-text {
+    line-height: 1rem;
+}
 
 .quiz-area {
     margin-top: 10px;
@@ -45,14 +52,17 @@ body {
 .quiz-panel {
     display: flex;
     flex-direction: column;
-    margin: 3% 5% 3% 5% ;
+    margin: 1% ;
     gap: 10px;
-    background: var(--cover);
-    
+    padding: 0 2em 2em;
+    background: var(--cover);    
 }
 
 #question-result {
     font-weight: bold;
+}
+
+#question-area {
 }
 
 #answers-area{
@@ -60,8 +70,9 @@ body {
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    margin: 5%;
+    margin: 1%;
 }
+
 
 footer {
     display: flex;
@@ -76,4 +87,9 @@ footer {
     margin: 1%;
     padding: 5px;
     color: var(--dark);
+}
+
+/* Inactive on load */
+#scoreboard {
+    visibility: hidden;
 }
