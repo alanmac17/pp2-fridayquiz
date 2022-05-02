@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    
+
 }
 
 .container {
@@ -39,19 +39,20 @@ body {
 
 .quiz-section {
     margin-top: 10px;
-   }
+}
 
 .quiz-panel {
     display: flex;
     flex-direction: column;
-    margin: 1% ;
-    gap: 10px;
+    margin: 1%;
+    gap: 15px;
     padding: 0 2em 2em;
     background: var(--cover);
-    border: 1px solid var(--dark); 
+    border: 1px solid var(--dark);
     max-width: 500px;
     margin-left: auto;
-margin-right: auto; 
+    margin-right: auto;
+    box-shadow: var(--shadow);
 }
 
 #question-result {
@@ -59,7 +60,7 @@ margin-right: auto;
 }
 
 
-#answers-area{
+#answers-area {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
@@ -70,7 +71,7 @@ margin-right: auto;
 .message-section {
     max-width: 500px;
     margin-left: auto;
-margin-right: auto;
+    margin-right: auto;
 }
 
 footer {
