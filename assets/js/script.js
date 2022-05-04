@@ -3,7 +3,7 @@ const issueDate = document.getElementById('todays-date')
 
 // questions & answers
 const questionNo = document.getElementById('current-question-no')
-const currentQuestion = document.getElementById('question-area')
+var currentQuestion = document.getElementById('question-area')
 const currentAnswerOptions = document.getElementById('answers-area')
 
 // buttons
@@ -26,3 +26,10 @@ const submitq = document.getElementById('submit')
 // Initial message and scoreboard
 var messageBoard = document.getElementById('story-text')
 
+// scoring
+let currentQuestion = 0;
+let score = 0;
+
+let questions = [
+
+]
