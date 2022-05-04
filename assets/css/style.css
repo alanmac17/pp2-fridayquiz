@@ -125,6 +125,10 @@ p {
     visibility: hidden;
 }
 
+.hide {
+    display: none;
+ }
+
 /* <div id="scoreboard">
                 Your score is <span id="current-score">0</span>/10
             </div> */
