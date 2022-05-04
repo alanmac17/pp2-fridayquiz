@@ -7,16 +7,16 @@ var currentQuestion = document.getElementById('question-area')
 var currentAnswerOptions = document.getElementById('answers-area')
 
 // buttons
-const button0 = getElementById('btn-answ0')
-const button1 = getElementById('btn-answ1')
-const button2 = getElementById('btn-answ2')
-const button3 = getElementById('btn-answ3')
+const button0 = document.getElementById('btn-answ0')
+const button1 = document.getElementById('btn-answ1')
+const button2 = document.getElementById('btn-answ2')
+const button3 = document.getElementById('btn-answ3')
 
 // answers
-const answer0 = getElementById('answer0')
-const answer1 = getElementById('answer1')
-const answer2 = getElementById('answer2')
-const answer3 = getElementById('answer3')
+const answer0 = document.getElementById('answer0')
+const answer1 = document.getElementById('answer1')
+const answer2 = document.getElementById('answer2')
+const answer3 = document.getElementById('answer3')
 
 // navigation
 const previousq = document.getElementById('previous')
@@ -30,38 +30,8 @@ var messageBoard = document.getElementById('story-text')
 var yourScore = document.getElementById("user-score");
 var totalScore = document.getElementById("total-score");
 
-let currentQuestion = 0;
-let score = 0;
-let totalScore = questionsList.length;
 
-// functions
-function createQuiz() {
-const currentQuizFile = questionsList[currentQuestion]
-
-currentQuestion.innerText = currentQuizFile.question
-answer0.innerText = currentQuizFile.a
-answer1.innerText = currentQuizFile.b
-answer2.innerText = currentQuizFile.c
-answer3.innerText = currentQuizFile.d
-
-}
-
-createQuiz();
-
-function showFinalScore() {
-
-}
-
-
-
-// Event Listeners
-submitQuiz.addEventListener('click', showFinalScore)
-prevBtn.addEventListener("click", previousq);
-nextBtn.addEventListener("click",nextq);
-submitBtn.addEventListener("click",submitQuiz);
-
-
-var questionsList[
+let questionsList = [
     {
         question: "What is the Capital of Nigeria?",
         a: "Cape Town",
@@ -94,4 +64,37 @@ var questionsList[
         d: "The British Virgin Islands",
         correct: "d",
     },
+
 ]
+
+// functions
+function createQuiz() {
+
+currentQuestion = 0;
+// totalScore.innerHTML = questionsList.length;
+
+const currentQuizFile = questionsList[currentQuestion]
+
+currentQuestion.innerText = currentQuizFile.question
+answer0.innerText = currentQuizFile.a
+answer1.innerText = currentQuizFile.b
+answer2.innerText = currentQuizFile.c
+answer3.innerText = currentQuizFile.d
+
+}
+
+createQuiz();
+
+function showFinalScore() {
+
+}
+
+
+function checkAnswer() {}
+
+
+// Event Listeners
+submitQuiz.addEventListener("click", showFinalScore);
+previousq.addEventListener("click", );
+nextq.addEventListener("click", nextQuestion);
+submitQuiz.addEventListener("click",);
