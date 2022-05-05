@@ -28,7 +28,7 @@ body {
 .container {
     display: grid;
     width: 70%;
-    margin: 0 auto;
+    margin: 1vh auto;
     overflow: auto;
     padding: 10px;
 }
@@ -58,7 +58,7 @@ body {
     padding: 1em 2em 2em 2em;
     background: var(--cover);
     border: 1px solid var(--dark);
-    max-width: 500px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--shadow);
@@ -72,14 +72,13 @@ body {
 
 #answers-area {
     display: grid;
-    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     margin: 1%;
 }
 
 .message-section {
-    max-width: 500px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }

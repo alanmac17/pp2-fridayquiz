@@ -6,11 +6,6 @@ var questionNo = document.getElementById('current-question-no')
 var currentQuestion = document.getElementById('question-area')
 var currentAnswerOptions = document.getElementById('answers-area')
 
-// buttons
-const button0 = document.getElementById('btn-answ0')
-const button1 = document.getElementById('btn-answ1')
-const button2 = document.getElementById('btn-answ2')
-const button3 = document.getElementById('btn-answ3')
 
 // answers
 const answer0 = document.getElementById('answer0')
