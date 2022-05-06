@@ -7,10 +7,10 @@ const currentQuestion = document.getElementById('questionArea')
 const currentAnswerOptions = document.getElementById('answers-area')
 
 // answers
-const answer0 = document.getElementById('answer0') 
-const answer1 = document.getElementById('answer1') 
-const answer2 = document.getElementById('answer2') 
-const answer3 = document.getElementById('answer3')
+const answer0El = document.getElementById('answerA') 
+const answer1El = document.getElementById('answerB') 
+const answer2El = document.getElementById('answerC') 
+const answer3El = document.getElementById('answerD')
 
 // navigation
 const previousQuestionEl = document.getElementById('previous')
@@ -23,8 +23,8 @@ var messageBoard = document.getElementById('story-text')
 // Variables
 
 let currentIndex = 0;
-let answeredQuestions =[]; // array of anwered question indexes
-let score = 0;
+let addAnswer =[]; // array of answered question indexes
+let Quizscore = 0;
 
 
 // Questions
@@ -35,7 +35,8 @@ let questions = [
         b: "Lagos",
         c: "Kano",
         d: "Zaria",
-        correct: "b",
+        correct: "answerB",
+        usersAnswer:null,
     },
     {
         question: "Who collaborated with Elton John on Cold Hearts",
@@ -43,7 +44,8 @@ let questions = [
         b: "Phil Collins",
         c: "Robyn",
         d: "Dua Lipa",
-        correct: "d",
+        correct: "answerD",
+        usersAnswer:null,
     },
     {
         question: "Which actor played the Joker in the 2022 film, The Batman?",
@@ -51,7 +53,8 @@ let questions = [
         b: "Barry Keoghan",
         c: "Peter MacDonald",
         d: "Andy Serkins",
-        correct: "a",
+        correct: "answerA",
+        usersAnswer:null,
     },
     {
         question: "The Premier of which islands was accused of cocaine trafficing?",
@@ -59,7 +62,8 @@ let questions = [
         b: "The Maldives",
         c: "The Cook Islands",
         d: "The British Virgin Islands",
-        correct: "d",
+        correct: "answerD",
+        usersAnswer:null,
     },
 
 ]
@@ -71,10 +75,10 @@ function createQuestion(questionIndex) {
 questionIndexEl.innerHTML = questionIndex + 1
 currentQuestion.innerText = questions[questionIndex].question;
 
-answer0.innerText = questions[questionIndex].a
-answer1.innerText = questions[questionIndex].b
-answer2.innerText = questions[questionIndex].c
-answer3.innerText = questions[questionIndex].d
+answer0El.innerText = questions[questionIndex].a
+answer1El.innerText = questions[questionIndex].b
+answer2El.innerText = questions[questionIndex].c
+answer3El.innerText = questions[questionIndex].d
 
 }
 
@@ -98,8 +102,14 @@ function showFinalScore() {
 }
 
 
-function checkAnswer() {
+function checkAnswer(buttonEl) {
+    const correctButtonIdforQuestion = questions[currentIndex].correct
+    // increment
+    // push question in to answered questions array
 
+    if (buttonEl.id === correctButtonIdforQuestion) {
+
+    }
 }
 
 
@@ -107,3 +117,8 @@ function checkAnswer() {
 submitQuizEl.addEventListener("click", showFinalScore);
 previousQuestionEl.addEventListener("click",previousQuestion);
 nextQuestionEl.addEventListener("click", nextQuestion);
+
+answer0El.addEventListener("click", checkAnswer);
+answer1El.addEventListener("click", checkAnswer);
+answer2El.addEventListener("click", checkAnswer);
+answer3El.addEventListener("click", checkAnswer);
