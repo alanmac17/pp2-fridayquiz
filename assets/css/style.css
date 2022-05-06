@@ -138,6 +138,12 @@ p {
     display: none;
 }
 
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
 /* <div id="scoreboard">
                 Your score is <span id="current-score">0</span>/10
             </div> */

@@ -18,13 +18,12 @@ const nextQuestionEl = document.getElementById('next')
 const submitQuizEl = document.getElementById('submit')
 
 // Initial message and scoreboard
-var messageBoard = document.getElementById('story-text')
+var messageBoardEl = document.getElementById('story-text')
 
 // Variables
 
 let currentIndex = 0;
-let Quizscore = 0;
-
+let quizScore = 0;
 
 // Questions
 let questions = [{
@@ -92,7 +91,7 @@ function nextQuestion() {
 
     if (currentIndex === questions.length - 1) {
         submitQuizEl.classList.remove("hide")
-        nextQuestionEl.classList.add("hide")
+        nextQuestionEl.classList.add("disabled")
     } else if (currentIndex > 0) {
         previousQuestionEl.classList.remove("hide")
     }
@@ -104,13 +103,18 @@ function previousQuestion() {
     currentIndex--
     createQuestion(currentIndex)
     submitQuizEl.classList.add("hide")
-    nextQuestionEl.classList.remove("hide")
+    nextQuestionEl.classList.remove("disabled")
 }
 
 function showFinalScore() {
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i].usersAnswer = questions[i].correct) {
+            quizScore++
+        } 
+    }
 
 
-   
+
     //if the user answer was correct then highlight the answer id button
     //else if the user answer was incorrect highlight the answer id button and highlight the user answer id button
 
