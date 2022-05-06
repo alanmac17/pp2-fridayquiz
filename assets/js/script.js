@@ -2,7 +2,7 @@
 const issueDate = document.getElementById('todays-date')
 
 // questions & answers
-const questionindex = document.getElementById('current-question-no')
+const questionIndexEl = document.getElementById('current-question-no')
 const currentQuestion = document.getElementById('questionArea')
 const currentAnswerOptions = document.getElementById('answers-area')
 
@@ -13,9 +13,9 @@ const answer2 = document.getElementById('answer2')
 const answer3 = document.getElementById('answer3')
 
 // navigation
-const previousq = document.getElementById('previous')
-const nextq = document.getElementById('next')
-const submitQuiz = document.getElementById('submit')
+const previousQuestionEl = document.getElementById('previous')
+const nextQuestionEl = document.getElementById('next')
+const submitQuizEl = document.getElementById('submit')
 
 // Initial message and scoreboard
 var messageBoard = document.getElementById('story-text')
@@ -65,21 +65,32 @@ let questions = [
 ]
 
 
-
-
 // functions
-function createQuiz() {
+function createQuestion(questionIndex) {
 
-questionindex.innerHTML = currentIndex + 1
-currentQuestion.innerText = questions[currentIndex].question;
-answer0.innerText = questions[currentIndex].a
-answer1.innerText = questions[currentIndex].b
-answer2.innerText = questions[currentIndex].c
-answer3.innerText = questions[currentIndex].d
-currentIndex++
+questionIndexEl.innerHTML = questionIndex + 1
+currentQuestion.innerText = questions[questionIndex].question;
+
+answer0.innerText = questions[questionIndex].a
+answer1.innerText = questions[questionIndex].b
+answer2.innerText = questions[questionIndex].c
+answer3.innerText = questions[questionIndex].d
+
 }
 
-createQuiz()
+createQuestion(currentIndex)
+
+function nextQuestion()
+{
+currentIndex++
+createQuestion(currentIndex)
+}
+
+function previousQuestion()
+{
+currentIndex--
+createQuestion(currentIndex)
+}
 
 
 function showFinalScore() {
@@ -93,6 +104,6 @@ function checkAnswer() {
 
 
 // Event Listeners
-submitQuiz.addEventListener("click", showFinalScore);
-previousq.addEventListener("click", );
-nextq.addEventListener("click", nextQuestion);
+submitQuizEl.addEventListener("click", showFinalScore);
+previousQuestionEl.addEventListener("click",previousQuestion);
+nextQuestionEl.addEventListener("click", nextQuestion);
