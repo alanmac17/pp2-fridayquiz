@@ -23,7 +23,6 @@ var messageBoard = document.getElementById('story-text')
 // Variables
 
 let currentIndex = 0;
-let addAnswer =[]; // array of answered question indexes
 let Quizscore = 0;
 
 
@@ -88,12 +87,18 @@ function nextQuestion()
 {
 currentIndex++
 createQuestion(currentIndex)
+
+if (currentIndex === questions.length-1) {
+    submitQuizEl.classList.remove("hide")
+}
 }
 
 function previousQuestion()
 {
 currentIndex--
 createQuestion(currentIndex)
+submitQuizEl.classList.add("hide")
+
 }
 
 
@@ -101,24 +106,18 @@ function showFinalScore() {
 
 }
 
-
-function checkAnswer(buttonEl) {
-    const correctButtonIdforQuestion = questions[currentIndex].correct
-    // increment
-    // push question in to answered questions array
-
-    if (buttonEl.id === correctButtonIdforQuestion) {
-
-    }
+function addAnswer(event) {
+    const buttonEl = event.target
+    questions[currentIndex].usersAnswer = buttonEl.id
+    console.log(questions[currentIndex])
 }
-
 
 // Event Listeners
 submitQuizEl.addEventListener("click", showFinalScore);
 previousQuestionEl.addEventListener("click",previousQuestion);
 nextQuestionEl.addEventListener("click", nextQuestion);
 
-answer0El.addEventListener("click", checkAnswer);
-answer1El.addEventListener("click", checkAnswer);
-answer2El.addEventListener("click", checkAnswer);
-answer3El.addEventListener("click", checkAnswer);
+answer0El.addEventListener("click", addAnswer);
+answer1El.addEventListener("click", addAnswer);
+answer2El.addEventListener("click", addAnswer);
+answer3El.addEventListener("click", addAnswer);
