@@ -3,8 +3,9 @@ const issueDate = document.getElementById('todays-date')
 
 // questions & answers
 const questionIndexEl = document.getElementById('current-question-no')
-const currentQuestion = document.getElementById('questionArea')
-const currentAnswerOptions = document.getElementById('answers-area')
+const currentQuestionEl = document.getElementById('questionArea')
+const currentAnswerOptionsEl = document.getElementById('answers-area')
+const progressSectionEl = document.getElementById('progress')
 
 // answers
 const answer0El = document.getElementById('answerA')
@@ -72,7 +73,7 @@ let questions = [{
 function createQuestion(questionIndex) {
 
     questionIndexEl.innerHTML = questionIndex + 1;
-    currentQuestion.innerText = questions[questionIndex].question;
+    currentQuestionEl.innerText = questions[questionIndex].question;
 
     answer0El.innerText = questions[questionIndex].a;
     answer1El.innerText = questions[questionIndex].b;
@@ -110,12 +111,15 @@ function previousQuestion() {
 function showFinalScore() {
 
     for (let i = 0; i < questions.length; i++) {
-        if (questions[i].userAnswers = questions[i].correct) {
+        if (questions[i].usersAnswer === questions[i].correct) {
             quizScore++
-            
         }
-    }
-  
+            }
+            submitQuizEl.classList.add("disabled")
+            progressSectionEl.innerText = `You scored ${quizScore} / ${questions.length}`
+            currentQuestionEl.innerText = "Answers"
+            currentAnswerOptionsEl.innerText = `"Here we go"`
+            
 }
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
