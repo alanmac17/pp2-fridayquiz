@@ -71,17 +71,17 @@ let questions = [{
 //Function to create a question by passing question index and pulling rel data from question array
 function createQuestion(questionIndex) {
 
-    questionIndexEl.innerHTML = questionIndex + 1
+    questionIndexEl.innerHTML = questionIndex + 1;
     currentQuestion.innerText = questions[questionIndex].question;
 
-    answer0El.innerText = questions[questionIndex].a
-    answer1El.innerText = questions[questionIndex].b
-    answer2El.innerText = questions[questionIndex].c
-    answer3El.innerText = questions[questionIndex].d
+    answer0El.innerText = questions[questionIndex].a;
+    answer1El.innerText = questions[questionIndex].b;
+    answer2El.innerText = questions[questionIndex].c;
+    answer3El.innerText = questions[questionIndex].d;
 
 }
 
-createQuestion(currentIndex)
+createQuestion(currentIndex);
 
 //Function to populate next question with incremental currentIndex value that is then passed to CreateQuestion
 
@@ -106,20 +106,17 @@ function previousQuestion() {
     nextQuestionEl.classList.remove("disabled")
 }
 
+//Function to calculate the final score
 function showFinalScore() {
+
     for (let i = 0; i < questions.length; i++) {
-        if (questions[i].usersAnswer = questions[i].correct) {
+        if (questions[i].userAnswers = questions[i].correct) {
             quizScore++
-        } 
+            
+        }
     }
-
-
-
-    //if the user answer was correct then highlight the answer id button
-    //else if the user answer was incorrect highlight the answer id button and highlight the user answer id button
-
+  
 }
-
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
 function addAnswer(event) {
