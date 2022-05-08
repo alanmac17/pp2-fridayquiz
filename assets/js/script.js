@@ -120,7 +120,7 @@ function showFinalScore() {
     submitQuizEl.classList.add("disabled")
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
-    
+
 
     let html = `
         <button id="myBtn" class="btn">See Results</button>    
@@ -138,9 +138,10 @@ function showFinalScore() {
 
 function addAnswer(event) {
     const buttonEl = event.target
-    questions[currentIndex].usersAnswer = buttonEl.id
-    console.log(buttonEl.id)
+    questions[currentIndex].usersAnswer = buttonEl.innerText
 }
+
+// Function to display modal results
 
 function displayresultsModal() {
     // Get the modal
@@ -170,14 +171,14 @@ function displayresultsModal() {
     }
 }
 
-    // Event Listeners
-    submitQuizEl.addEventListener("click", showFinalScore);
-    previousQuestionEl.addEventListener("click", previousQuestion);
-    nextQuestionEl.addEventListener("click", nextQuestion);
+// Event Listeners
+submitQuizEl.addEventListener("click", showFinalScore);
+previousQuestionEl.addEventListener("click", previousQuestion);
+nextQuestionEl.addEventListener("click", nextQuestion);
 
 
-    // Event Listeners to capture the click action and run addAnswer
-    answer0El.addEventListener("click", addAnswer);
-    answer1El.addEventListener("click", addAnswer);
-    answer2El.addEventListener("click", addAnswer);
-    answer3El.addEventListener("click", addAnswer);
+// Event Listeners to capture the click action and run addAnswer
+answer0El.addEventListener("click", addAnswer);
+answer1El.addEventListener("click", addAnswer);
+answer2El.addEventListener("click", addAnswer);
+answer3El.addEventListener("click", addAnswer);
