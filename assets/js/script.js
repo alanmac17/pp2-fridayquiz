@@ -6,6 +6,7 @@ const questionIndexEl = document.getElementById('current-question-no')
 const currentQuestionEl = document.getElementById('questionArea')
 const currentAnswerOptionsEl = document.getElementById('answers-area')
 const progressSectionEl = document.getElementById('progress')
+const quizPanelEl = document.getElementById('quizPanel')
 
 // answers
 const answer0El = document.getElementById('a')
@@ -17,6 +18,7 @@ const answer3El = document.getElementById('d')
 const previousQuestionEl = document.getElementById('previous')
 const nextQuestionEl = document.getElementById('next')
 const submitQuizEl = document.getElementById('submit')
+const myBtnEl = document.getElementById('myBtn')
 
 // Initial message and scoreboard
 var messageBoardEl = document.getElementById('story-text')
@@ -114,12 +116,23 @@ function showFinalScore() {
         if (questions[i].usersAnswer === questions[i].correct) {
             quizScore++
         }
-            }
-            submitQuizEl.classList.add("disabled")
-            progressSectionEl.innerText = `You scored ${quizScore} / ${questions.length}`
-            currentQuestionEl.innerText = "Answers"
-            currentAnswerOptionsEl.innerText = `"Here we go"`
-            
+    }
+    submitQuizEl.classList.add("disabled")
+    progressSectionEl.innerText = "Quiz Completed"
+    currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
+    
+
+    let html = `
+        <button id="myBtn" class="btn">See Results</button>    
+        <div id = "myModal"class= "modal">
+        <div class = "modal-content">
+        <span class = "close">&times;</span> 
+        <p>You scored ${quizScore} / ${questions.length}</p> 
+        </div>
+        </div>`
+    currentAnswerOptionsEl.innerHTML = html;
+
+    displayresultsModal();
 }
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
@@ -129,15 +142,42 @@ function addAnswer(event) {
     console.log(buttonEl.id)
 }
 
+function displayresultsModal() {
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+    // Event Listeners
+    submitQuizEl.addEventListener("click", showFinalScore);
+    previousQuestionEl.addEventListener("click", previousQuestion);
+    nextQuestionEl.addEventListener("click", nextQuestion);
 
 
-// Event Listeners
-submitQuizEl.addEventListener("click", showFinalScore);
-previousQuestionEl.addEventListener("click", previousQuestion);
-nextQuestionEl.addEventListener("click", nextQuestion);
-
-// Event Listeners to capture the click action and run addAnswer
-answer0El.addEventListener("click", addAnswer);
-answer1El.addEventListener("click", addAnswer);
-answer2El.addEventListener("click", addAnswer);
-answer3El.addEventListener("click", addAnswer);
+    // Event Listeners to capture the click action and run addAnswer
+    answer0El.addEventListener("click", addAnswer);
+    answer1El.addEventListener("click", addAnswer);
+    answer2El.addEventListener("click", addAnswer);
+    answer3El.addEventListener("click", addAnswer);

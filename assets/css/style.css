@@ -142,7 +142,7 @@ p {
     opacity: 0.6;
     cursor: not-allowed;
     pointer-events: none;
-  }
+}
 
 /* <div id="scoreboard">
                 Your score is <span id="current-score">0</span>/10
@@ -159,4 +159,44 @@ p {
     .quiz-panel {
         gap: 5%;
     }
+}
+
+/* Modal Pop Up to display results */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 0.5em;
+    max-width: 600px;
+    padding: 2em;
+    margin: auto;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
