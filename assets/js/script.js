@@ -8,10 +8,10 @@ const currentAnswerOptionsEl = document.getElementById('answers-area')
 const progressSectionEl = document.getElementById('progress')
 
 // answers
-const answer0El = document.getElementById('answerA')
-const answer1El = document.getElementById('answerB')
-const answer2El = document.getElementById('answerC')
-const answer3El = document.getElementById('answerD')
+const answer0El = document.getElementById('a')
+const answer1El = document.getElementById('b')
+const answer2El = document.getElementById('c')
+const answer3El = document.getElementById('d')
 
 // navigation
 const previousQuestionEl = document.getElementById('previous')
@@ -33,7 +33,7 @@ let questions = [{
         b: "Lagos",
         c: "Kano",
         d: "Zaria",
-        correct: "answerB",
+        correct: "b",
         usersAnswer: null,
     },
     {
@@ -42,7 +42,7 @@ let questions = [{
         b: "Phil Collins",
         c: "Robyn",
         d: "Dua Lipa",
-        correct: "answerD",
+        correct: "d",
         usersAnswer: null,
     },
     {
@@ -51,7 +51,7 @@ let questions = [{
         b: "Barry Keoghan",
         c: "Peter MacDonald",
         d: "Andy Serkins",
-        correct: "answerA",
+        correct: "a",
         usersAnswer: null,
     },
     {
@@ -60,7 +60,7 @@ let questions = [{
         b: "The Maldives",
         c: "The Cook Islands",
         d: "The British Virgin Islands",
-        correct: "answerD",
+        correct: "d",
         usersAnswer: null,
     },
 
@@ -126,7 +126,7 @@ function showFinalScore() {
 function addAnswer(event) {
     const buttonEl = event.target
     questions[currentIndex].usersAnswer = buttonEl.id
-    console.log(questions[currentIndex])
+    console.log(buttonEl.id)
 }
 
 
