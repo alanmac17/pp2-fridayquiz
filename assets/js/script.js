@@ -6,7 +6,7 @@ const questionIndexEl = document.getElementById('current-question-no')
 const currentQuestionEl = document.getElementById('questionArea')
 const currentAnswerOptionsEl = document.getElementById('answers-area')
 const progressSectionEl = document.getElementById('progress')
-const quizPanelEl = document.getElementById('quizPanel')
+
 
 // answers
 const answer0El = document.getElementById('a')
@@ -18,7 +18,7 @@ const answer3El = document.getElementById('d')
 const previousQuestionEl = document.getElementById('previous')
 const nextQuestionEl = document.getElementById('next')
 const submitQuizEl = document.getElementById('submit')
-const myBtnEl = document.getElementById('myBtn')
+
 
 // Initial message and scoreboard
 var messageBoardEl = document.getElementById('story-text')
@@ -35,7 +35,7 @@ let questions = [{
         b: "Lagos",
         c: "Kano",
         d: "Zaria",
-        correct: "b",
+        correct: "Lagos",
         usersAnswer: null,
     },
     {
@@ -44,7 +44,7 @@ let questions = [{
         b: "Phil Collins",
         c: "Robyn",
         d: "Dua Lipa",
-        correct: "d",
+        correct: "Dua Lipa",
         usersAnswer: null,
     },
     {
@@ -53,7 +53,7 @@ let questions = [{
         b: "Barry Keoghan",
         c: "Peter MacDonald",
         d: "Andy Serkins",
-        correct: "a",
+        correct: "Barry Keoghan",
         usersAnswer: null,
     },
     {
@@ -62,9 +62,119 @@ let questions = [{
         b: "The Maldives",
         c: "The Cook Islands",
         d: "The British Virgin Islands",
-        correct: "d",
+        correct: "The British Virgin Islands",
         usersAnswer: null,
     },
+
+    {
+        question: "Queen guitarist Brian May is also an expert in what scientific field?",
+        a: "Zoology",
+        b: "Astrophysics",
+        c: "Geology",
+        d: "Mathematics",
+        correct: "Astrophysics",
+        usersAnswer: null,
+    },
+
+
+    {
+        question: "How many time zones are there in Russia?",
+        a: "One",
+        b: "Two",
+        c: "Five",
+        d: "Eleven",
+        correct: "Eleven",
+        usersAnswer: null,
+    },
+
+    {
+        question: "What country has the most islands in the world?",
+        a: "France",
+        b: "USA",
+        c: "Sweden",
+        d: "Russia",
+        correct: "Sweden",
+        usersAnswer: null,
+    },
+    {
+        question: "Ireland ended their Women's Six Nations with a win over Scotland. Where was the game played?",
+        a: "RDS",
+        b: "Musgrave Park",
+        c: "Kingspan Stadium",
+        d: "Scotstoun Stadium",
+        correct: "Kingspan Stadium",
+        usersAnswer: null,
+    },
+
+
+    {
+        question: "Who invented the World Wide Web?",
+        a: "Elon Musk",
+        b: "Sergey Brin",
+        c: "Tim Berners-Lee",
+        d: "Peter Thiel",
+        correct: "Tim Berners-Lee",
+        usersAnswer: null,
+    },
+
+    {
+        question: "Kane Tanaka of Japan was the worlds oldest person when she died last month at 119. Which of the following is NOT true of her long life?",
+        a: "She experienced two pandemics",
+        b: "She lived through two world wars",
+        c: "She was born the year Japanese women won the right to vote",
+        d: "The Model T, airplane and personal computer were all invented in her lifetime",
+        correct: "She was born the year Japanese women won the right to vote",
+        usersAnswer: null,
+    },
+
+
+    {
+        question: "When was Netflix founded?",
+        a: "1997",
+        b: "2001",
+        c: "2003",
+        d: "2014",
+        correct: "1997",
+        usersAnswer: null,
+    },
+
+    {
+        question: "Ronnie O'Sullivan claimed his seventh World Snooker Championship this week, but in what year did he win his first?",
+        a: "2000",
+        b: "2001",
+        c: "2002",
+        d: "2003",
+        correct: "2001",
+        usersAnswer: null,
+    },
+    {
+        question: "In Greek mythology who was the mother of the gods?",
+        a: "Aphrodite",
+        b: "Athena",
+        c: "Rhea",
+        d: "Hera",
+        correct: "Rhea",
+        usersAnswer: null,
+    },
+    {
+        question: "What were crisps flavoured with before Tayto revolutionised the process?",
+        a: "Veal",
+        b: "Vinegar",
+        c: "Smokey Bacon",
+        d: "Nothing but a salt sachet",
+        correct: "Nothing but a salt sachet",
+        usersAnswer: null,
+    },
+    {
+        question: "Jim Sheridan directed a hip hop crime drama about the life of which US rapper?",
+        a: "Eminem",
+        b: "50 Cent",
+        c: "Puff Daddy",
+        d: "Dr Dre",
+        correct: "50 Cent",
+        usersAnswer: null,
+    },
+
 
 ]
 
