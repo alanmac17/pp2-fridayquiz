@@ -22,6 +22,8 @@ const submitQuizEl = document.getElementById('submit')
 
 // Initial message
 var messageSectionEl = document.getElementById('message-section')
+var modalContentEl = document.getElementsByClassName('modal-content')
+
 
 // Variables
 
@@ -233,40 +235,28 @@ function showFinalScore() {
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
 
-
-    // let html = `
-    //     <button id="myBtn" class="btn">See Results</button>    
-    //     <div id = "myModal"class= "modal">
-    //     <div class = "modal-content">
-    //     <span class = "close">&times;</span> 
-    //     <p>You scored ${quizScore} / ${questions.length}</p> 
-
-    // currentAnswerOptionsEl.innerHTML = html;
-
-
-
     let betterHtml = `
     <button id="myBtn" class="btn">See Results</button>
     <div id = "myModal"class= "modal">
     <div class = "modal-content">
     <span class = "close">&times;</span>
-    <ul>
     `
 
     for (let i = 0; i < questions.length; i++) {
         betterHtml +=
-            `
-            <li>${questions[i].question}</li>
-            <li>${questions[i].usersAnswer}</li>
-        <li>${questions[i].correct}</li>`
+            `   <ol>${parseInt([i]) + 1}: ${questions[i].question}</ol>
+                <li>Submitted: ${questions[i].usersAnswer}</li>
+                <li>Correct Answer: ${questions[i].correct}</li>
+                <br>    `
     }
 
-    betterHtml +=  '</ul></div></div>'
+    betterHtml += '</div></div>'
 
     currentAnswerOptionsEl.innerHTML = betterHtml;
 
     displayresultsModal();
 }
+
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
 function addAnswer(event) {

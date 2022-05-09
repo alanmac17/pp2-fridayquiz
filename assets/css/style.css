@@ -70,6 +70,7 @@ body {
 #questionArea {
     font-weight: bold;
     font-size: 2em;
+    padding-top: 1%;
 }
 
 
@@ -189,7 +190,7 @@ p {
 .modal-content {
     background-color: white;
     border-radius: 0.5em;
-    width: 60%;
+    max-width: 700px;
     padding: 2em;
     margin: auto;
     border: 1px solid var(--dark);
