@@ -12,6 +12,7 @@ const answer2El = document.getElementById('c')
 const answer3El = document.getElementById('d')
 
 // navigation
+const navigationEl = document.getElementById('navigation')
 const previousQuestionEl = document.getElementById('previous')
 const nextQuestionEl = document.getElementById('next')
 const submitQuizEl = document.getElementById('submit')
@@ -277,7 +278,7 @@ function showFinalScore() {
     submitQuizEl.classList.add("disabled")
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
-    messageSectionEl.innerHTML = `<img src="assets/img/${quizScore}.gif" alt="based on score">`
+    currentAnswerOptionsEl.innerHTML = `<img src="assets/img/${quizScore}.gif" alt="based on score">`
 
     let betterHtml = `
     <button id="myBtn" class="btn">See Answers</button>
@@ -295,7 +296,7 @@ function showFinalScore() {
 
     betterHtml += '</div></div>'
 
-    currentAnswerOptionsEl.innerHTML = betterHtml;
+    navigationEl.innerHTML = betterHtml;
     displayresultsModal();
 }
 
