@@ -36,6 +36,7 @@ let questions = [{
         d: "Zaria",
         correct: "Lagos",
         usersAnswer: null,
+        story: "Legend has it a man known only as Peter created a quiz",
     },
     {
         question: "Who collaborated with Elton John on Cold Hearts",
@@ -45,6 +46,7 @@ let questions = [{
         d: "Dua Lipa",
         correct: "Dua Lipa",
         usersAnswer: null,
+        story: "Part man - part machine, Peter was a certified genius",
     },
     {
         question: "Which actor played the Joker in the 2022 film, The Batman?",
@@ -54,6 +56,7 @@ let questions = [{
         d: "Andy Serkins",
         correct: "Barry Keoghan",
         usersAnswer: null,
+        story: "Every Friday like a your local chinese Peter would make you wait another 45 minutes for delivery!",
     },
     {
         question: "The Premier of which islands was accused of cocaine trafficing?",
@@ -63,6 +66,7 @@ let questions = [{
         d: "The British Virgin Islands",
         correct: "The British Virgin Islands",
         usersAnswer: null,
+        story: "But once sent it spread like wildfire across the inboxes of Ireland",
     },
 
     {
@@ -73,6 +77,7 @@ let questions = [{
         d: "Mathematics",
         correct: "Astrophysics",
         usersAnswer: null,
+        story: "It became a symbol of hope for the underpaid and despressed",
     },
 
 
@@ -84,6 +89,7 @@ let questions = [{
         d: "Eleven",
         correct: "Eleven",
         usersAnswer: null,
+        story: "However neither quiz nor Peter have been seen in over 2 years",
     },
 
     {
@@ -94,6 +100,7 @@ let questions = [{
         d: "Russia",
         correct: "Sweden",
         usersAnswer: null,
+        story: "After a lot of training montages, I have decided to take up the mantel of Peter",
     },
     {
         question: "Ireland ended their Women's Six Nations with a win over Scotland. Where was the game played?",
@@ -103,6 +110,7 @@ let questions = [{
         d: "Scotstoun Stadium",
         correct: "Kingspan Stadium",
         usersAnswer: null,
+        story: "Using the powers of Javascript, I intend to craft a quiz out of the workshop of life",
     },
 
 
@@ -114,6 +122,7 @@ let questions = [{
         d: "Peter Thiel",
         correct: "Tim Berners-Lee",
         usersAnswer: null,
+        story: "Behold the Friday Quiz!",
     },
 
     {
@@ -124,6 +133,7 @@ let questions = [{
         d: "The Model T, airplane and personal computer were all invented in her lifetime",
         correct: "She was born the year Japanese women won the right to vote",
         usersAnswer: null,
+        story: "May the questions forever be in your favour",
     },
 
 
@@ -135,6 +145,7 @@ let questions = [{
         d: "2014",
         correct: "1997",
         usersAnswer: null,
+        story: "Peter would have never have said that.",
     },
 
     {
@@ -145,6 +156,7 @@ let questions = [{
         d: "2003",
         correct: "2001",
         usersAnswer: null,
+        story: "My wife told me that Alexa & Siri ask Peter questions",
     },
     {
         question: "In Greek mythology who was the mother of the gods?",
@@ -154,6 +166,7 @@ let questions = [{
         d: "Hera",
         correct: "Rhea",
         usersAnswer: null,
+        story: "A photon is going through airport security. The officer asks if he has any luggage. The photon says, No, Im traveling light.",
     },
     {
         question: "What were crisps flavoured with before Tayto revolutionised the process?",
@@ -163,6 +176,7 @@ let questions = [{
         d: "Nothing but a salt sachet",
         correct: "Nothing but a salt sachet",
         usersAnswer: null,
+        story: "Man, Peter would loved that one.",
     },
     {
         question: "Jim Sheridan directed a hip hop crime drama about the life of which US rapper?",
@@ -172,6 +186,7 @@ let questions = [{
         d: "Dr Dre",
         correct: "50 Cent",
         usersAnswer: null,
+        story: "The last question, well done good sir and senioritas ",
     },
 
 
@@ -190,6 +205,8 @@ function createQuestion(questionIndex) {
     answer1El.innerText = questions[questionIndex].b;
     answer2El.innerText = questions[questionIndex].c;
     answer3El.innerText = questions[questionIndex].d;
+
+    messageSectionEl.innerText = questions[questionIndex].story
 
     if (questions[currentIndex].usersAnswer != "") {
         if (questions[currentIndex].usersAnswer === questions[questionIndex].a) {
@@ -216,9 +233,9 @@ function createQuestion(questionIndex) {
             answer0El.classList.remove('btnSelected')
             answer1El.classList.remove('btnSelected')
             answer2El.classList.remove('btnSelected')
-            answer3El.classList.remove('btnSelected')}
+            answer3El.classList.remove('btnSelected')
+        }
     }
-
 
 }
 
@@ -233,9 +250,9 @@ function nextQuestion() {
     if (currentIndex === questions.length - 1) {
         submitQuizEl.classList.remove("hide")
         nextQuestionEl.classList.add("disabled")
+        previousQuestionEl.classList.add("hide")
     } else if (currentIndex > 0) {
         previousQuestionEl.classList.remove("hide")
-        messageSectionEl.classList.add('hide')
     }
 }
 
@@ -260,9 +277,10 @@ function showFinalScore() {
     submitQuizEl.classList.add("disabled")
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
+    messageSectionEl.innerHTML = `<img src="assets/img/${quizScore}.jpg" alt="based on score">`
 
     let betterHtml = `
-    <button id="myBtn" class="btn">See Results</button>
+    <button id="myBtn" class="btn">See Answers</button>
     <div id = "myModal"class= "modal">
     <div class = "modal-content">
     <span class = "close">&times;</span>

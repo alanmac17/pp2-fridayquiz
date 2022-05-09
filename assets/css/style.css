@@ -79,6 +79,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     margin: 1%;
+    align-items: center;
 }
 
 #message-section {
@@ -128,7 +129,7 @@ p {
     margin: 6px;
     font-size: large;
     font-weight: 600;
-    transition-duration: 0.4s;
+    transition-duration: 1.0s;
     min-width: 100px;
 }
 
@@ -141,6 +142,7 @@ p {
     background-color: var(--dark);
     color: var(--hovertext);
 }
+
 
 /* Inactive on load */
 #scoreboard {
@@ -179,11 +181,14 @@ p {
 .modal {
     display: none;
     position: fixed;
-    padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
     z-index: 1;
     background-color: rgb(0, 0, 0);
     /* Fallback color */
@@ -200,6 +205,10 @@ p {
     margin: auto;
     border: 1px solid var(--dark);
     box-shadow: var(--dark);
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 700px;
 }
 
 /* The Close Button */
