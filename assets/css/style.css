@@ -137,6 +137,11 @@ p {
     color: var(--hovertext);
 }
 
+.btnSelected {
+    background-color: var(--dark);
+    color: var(--hovertext);
+}
+
 /* Inactive on load */
 #scoreboard {
     visibility: hidden;

@@ -1,6 +1,3 @@
-// todays date
-const issueDate = document.getElementById('todays-date')
-
 // questions & answers
 const questionIndexEl = document.getElementById('current-question-no')
 const currentQuestionEl = document.getElementById('questionArea')
@@ -194,6 +191,35 @@ function createQuestion(questionIndex) {
     answer2El.innerText = questions[questionIndex].c;
     answer3El.innerText = questions[questionIndex].d;
 
+    if (questions[currentIndex].usersAnswer != "") {
+        if (questions[currentIndex].usersAnswer === questions[questionIndex].a) {
+            answer0El.classList.add('btnSelected')
+            answer1El.classList.remove('btnSelected')
+            answer2El.classList.remove('btnSelected')
+            answer3El.classList.remove('btnSelected')
+        } else if (questions[currentIndex].usersAnswer === questions[questionIndex].b) {
+            answer1El.classList.add('btnSelected')
+            answer0El.classList.remove('btnSelected')
+            answer2El.classList.remove('btnSelected')
+            answer3El.classList.remove('btnSelected')
+        } else if (questions[currentIndex].usersAnswer === questions[questionIndex].c) {
+            answer2El.classList.add('btnSelected')
+            answer0El.classList.remove('btnSelected')
+            answer1El.classList.remove('btnSelected')
+            answer3El.classList.remove('btnSelected')
+        } else if (questions[currentIndex].usersAnswer === questions[questionIndex].d) {
+            answer3El.classList.add('btnSelected')
+            answer0El.classList.remove('btnSelected')
+            answer1El.classList.remove('btnSelected')
+            answer2El.classList.remove('btnSelected')
+        } else {
+            answer0El.classList.remove('btnSelected')
+            answer1El.classList.remove('btnSelected')
+            answer2El.classList.remove('btnSelected')
+            answer3El.classList.remove('btnSelected')}
+    }
+
+
 }
 
 createQuestion(currentIndex);
@@ -223,7 +249,7 @@ function previousQuestion() {
 }
 
 
-//Function to calculate the final score
+//Function to calculate the final score and push modal code to questions area
 function showFinalScore() {
 
     for (let i = 0; i < questions.length; i++) {
@@ -241,7 +267,6 @@ function showFinalScore() {
     <div class = "modal-content">
     <span class = "close">&times;</span>
     `
-
     for (let i = 0; i < questions.length; i++) {
         betterHtml +=
             `   <ol>${parseInt([i]) + 1}: ${questions[i].question}</ol>
@@ -253,7 +278,6 @@ function showFinalScore() {
     betterHtml += '</div></div>'
 
     currentAnswerOptionsEl.innerHTML = betterHtml;
-
     displayresultsModal();
 }
 
@@ -264,7 +288,7 @@ function addAnswer(event) {
     questions[currentIndex].usersAnswer = buttonEl.innerText
 }
 
-// Function to display modal results
+// Function to display modal results 
 
 function displayresultsModal() {
     // Get the modal
