@@ -187,7 +187,7 @@ let questions = [{
         d: "Dr Dre",
         correct: "50 Cent",
         usersAnswer: null,
-        story: "The last question, well done good sir and senioritas ",
+        story: "Well done today, you played a good game.",
     },
 
 
