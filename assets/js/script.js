@@ -20,8 +20,8 @@ const nextQuestionEl = document.getElementById('next')
 const submitQuizEl = document.getElementById('submit')
 
 
-// Initial message and scoreboard
-var messageBoardEl = document.getElementById('story-text')
+// Initial message
+var messageSectionEl = document.getElementById('message-section')
 
 // Variables
 
@@ -207,6 +207,7 @@ function nextQuestion() {
         nextQuestionEl.classList.add("disabled")
     } else if (currentIndex > 0) {
         previousQuestionEl.classList.remove("hide")
+        messageSectionEl.classList.add('hide')
     }
 }
 
