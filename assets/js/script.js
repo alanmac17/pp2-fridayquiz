@@ -220,6 +220,7 @@ function previousQuestion() {
     nextQuestionEl.classList.remove("disabled")
 }
 
+
 //Function to calculate the final score
 function showFinalScore() {
 
@@ -233,15 +234,36 @@ function showFinalScore() {
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
 
 
-    let html = `
-        <button id="myBtn" class="btn">See Results</button>    
-        <div id = "myModal"class= "modal">
-        <div class = "modal-content">
-        <span class = "close">&times;</span> 
-        <p>You scored ${quizScore} / ${questions.length}</p> 
-        </div>
-        </div>`
-    currentAnswerOptionsEl.innerHTML = html;
+    // let html = `
+    //     <button id="myBtn" class="btn">See Results</button>    
+    //     <div id = "myModal"class= "modal">
+    //     <div class = "modal-content">
+    //     <span class = "close">&times;</span> 
+    //     <p>You scored ${quizScore} / ${questions.length}</p> 
+
+    // currentAnswerOptionsEl.innerHTML = html;
+
+
+
+    let betterHtml = `
+    <button id="myBtn" class="btn">See Results</button>
+    <div id = "myModal"class= "modal">
+    <div class = "modal-content">
+    <span class = "close">&times;</span>
+    <ul>
+    `
+
+    for (let i = 0; i < questions.length; i++) {
+        betterHtml +=
+            `
+            <li>${questions[i].question}</li>
+            <li>${questions[i].usersAnswer}</li>
+        <li>${questions[i].correct}</li>`
+    }
+
+    betterHtml +=  '</ul></div></div>'
+
+    currentAnswerOptionsEl.innerHTML = betterHtml;
 
     displayresultsModal();
 }
