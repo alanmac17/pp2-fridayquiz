@@ -277,7 +277,7 @@ function showFinalScore() {
     submitQuizEl.classList.add("disabled")
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
-    messageSectionEl.innerHTML = `<img src="assets/img/${quizScore}.jpg" alt="based on score">`
+    messageSectionEl.innerHTML = `<img src="assets/img/${quizScore}.gif" alt="based on score">`
 
     let betterHtml = `
     <button id="myBtn" class="btn">See Answers</button>
