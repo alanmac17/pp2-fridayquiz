@@ -198,8 +198,9 @@ let questions = [{
 
 //Function to create a question by passing question index and pulling rel data from question array
 function createQuestion(questionIndex) {
-
+  
     questionIndexEl.innerHTML = questionIndex + 1;
+
     currentQuestionEl.innerText = questions[questionIndex].question;
 
     answer0El.innerText = questions[questionIndex].a;
@@ -261,6 +262,10 @@ function nextQuestion() {
 
 function previousQuestion() {
     currentIndex--
+    if (currentIndex < 1) {
+        currentIndex = 1
+    }
+
     createQuestion(currentIndex)
     submitQuizEl.classList.add("hide")
     nextQuestionEl.classList.remove("disabled")
@@ -279,6 +284,8 @@ function showFinalScore() {
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
     currentAnswerOptionsEl.innerHTML = `<img src="assets/img/${quizScore}.gif" alt="based on score">`
+    // currentAnswerOptionsEl.classList.remove('')
+
 
     let betterHtml = `
     <button id="myBtn" class="btn">See Answers</button>
