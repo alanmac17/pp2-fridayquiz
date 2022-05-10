@@ -133,7 +133,7 @@ p {
     min-width: 100px;
 }
 
-.btn:hover {
+.btn:focus {
     background-color: var(--dark);
     color: var(--hovertext);
 }
