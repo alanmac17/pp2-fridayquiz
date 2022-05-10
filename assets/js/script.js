@@ -262,8 +262,8 @@ function nextQuestion() {
 
 function previousQuestion() {
     currentIndex--
-    if (currentIndex < 1) {
-        currentIndex = 1
+    if (currentIndex < 0) {
+        currentIndex = 0
     }
 
     createQuestion(currentIndex)
@@ -284,11 +284,12 @@ function showFinalScore() {
     progressSectionEl.innerText = "Quiz Completed"
     currentQuestionEl.innerText = `You scored ${quizScore} / ${questions.length}`
     currentAnswerOptionsEl.innerHTML = `<img src="assets/img/${quizScore}.gif" alt="based on score">`
-    // currentAnswerOptionsEl.classList.remove('')
+    currentAnswerOptionsEl.style.gridTemplateColumns = 'repeat(1, 1fr)'
 
 
     let betterHtml = `
     <button id="myBtn" class="btn">See Answers</button>
+    <button id="btnrefresh" class="btn" value="Refresh" onClick="refresh(this)">Restart</button>
     <div id = "myModal"class= "modal">
     <div class = "modal-content">
     <span class = "close">&times;</span>
@@ -307,6 +308,10 @@ function showFinalScore() {
     displayresultsModal();
 }
 
+
+function refresh(){
+    window.location.reload("Refresh")
+  }
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
 function addAnswer(event) {
