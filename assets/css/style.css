@@ -120,7 +120,7 @@ p {
 }
 
 .btn {
-    box-shadow: var(--dark);
+    box-shadow: var(--shadow);
     background: var(--light);
     color: var(--primary);
     border-radius: 4px;
@@ -224,7 +224,7 @@ ol {
     padding: 5px;
     margin: auto;
     border: 1px solid var(--dark);
-    box-shadow: var(--dark);
+    box-shadow: var(--shadow);
     overflow: scroll;
     overflow-x: hidden;
     overflow-y: auto;
