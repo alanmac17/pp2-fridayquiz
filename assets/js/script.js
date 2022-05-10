@@ -198,7 +198,7 @@ let questions = [{
 
 //Function to create a question by passing question index and pulling rel data from question array
 function createQuestion(questionIndex) {
-  
+
     questionIndexEl.innerHTML = questionIndex + 1;
 
     currentQuestionEl.innerText = questions[questionIndex].question;
@@ -309,9 +309,9 @@ function showFinalScore() {
 }
 
 
-function refresh(){
+function refresh() {
     window.location.reload("Refresh")
-  }
+}
 //Function to add the users selected or clicked answer to the questions array by using the target id from the event that was passed through, 
 
 function addAnswer(event) {
