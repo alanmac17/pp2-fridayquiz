@@ -123,6 +123,15 @@ Scoring was equally important and sharing a screenshot of the score around the o
   - A few errors regarding template literals not valid in IE6  
   - ![(Jigsaw) validator](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/javascript_validator_results.jpg)
 
+-jshit 
+ Metrics
+- There are 10 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 0.
+- Largest function has 29 statements in it, while the median is 4.
+- The most complex function has a cyclomatic complexity value of 6 while the median is 1.5.
+- 23 warnings about const
+- 0 errors
+
 ### Unfixed Bugs
 
 When moving from one question to another using previous/next, the selected answer is highlighted with a white border, if a user changes their answer while it clearly shows the new selection; the old selection remains with a white border until the next/previous button is selected.
