@@ -6,6 +6,22 @@ Scoring was equally important and sharing a screenshot of the score around the o
 
 ![Responsive Mockup](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/responsivedesign.jpg)
 
+- [Friday Quiz](#friday-quiz)
+  * [Design](#design)
+    + [Site Overview](#site-overview)
+    + [Features Left to Implement](#features-left-to-implement)
+  * [Testing](#testing)
+    + [Device Testing](#device-testing)
+    + [Bug Fixes](#bug-fixes)
+    + [Validator Testing](#validator-testing)
+    + [Unfixed Bugs](#unfixed-bugs)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+    + [Media](#media)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Design 
 
 - The quiz is a single webpage with a static URL. 
