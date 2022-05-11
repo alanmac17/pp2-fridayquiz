@@ -1,108 +1,176 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Friday Quiz
 
-Welcome alanmac17,
+Welcome to the Friday Quiz. The Friday quiz started out as a microsoft form sent out every week by a guy named Peter. Over time this 15 question quiz became so popular it had paid advertising with the form. The quiz itself is a mix of general knowledge and current events. Peter was a victim of his own success and if he missed a week or took annual leave, hundreds of emails and whatsapp messages would be sent looking for the latest link to the quiz. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Scoring was equally important and sharing a screenshot of the score around the office email or a quick message to the whatsapp ex. "9.. not my best" was custom. So the purpose of this website is to provide a new easy to use quiz, similar in format and ready to populate with new questions each and every Friday.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive Mockup](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/responsivedesign.jpg)
 
-## Gitpod Reminders
+## Design 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- The quiz is a single webpage with a static URL. 
+- The user should be able to access all functionality within a single page and using javascript receive relevant data.
+- The questions are displayed one by one and navigation + submit buttons appear when needed
 
-`python3 -m http.server`
+ __wireframes__
+- The design did not differ much from the original wireframes.
+![Wireframe](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/wireframe_Start-Page.png)
 
-A blue button should appear to click: _Make Public_,
+ __color scheme__
+- The color scheme was inspired by newspapers typography and recycled napkins.
+![Color Scheme](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/color%20scheme%20p2.jpg)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+### Site Overview
 
-Another blue button should appear to click: _Open Browser_.
+ __top-section__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ - The Friday Quiz heading acts like a logo. Underneath is the issue date which is a paragraph.
+ - The section uses flex design to cater for mobile use.
+ - From reading this section the user should be able to judge that this is the lastest quiz.
+ - Future Dev:  Create a navigation option that allows users to select previous quizzes and redo them.
+  
+![Top Section](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/top-section.jpg)
 
-To log into the Heroku toolbelt CLI:
+ __question-panel__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+ - The question panel on a clear white background shows the current question number, the question and answer options.
+ - From here the user can click on any of the answers and the selected button will be highlighted
+ - A simple centre aligned design should allows users to clearly identify where to read the question and how to answer. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Question Panel](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/question-panel.jpg)
 
-------
+  - When opening the page the first question and set of answers is automatically populated
+  - The user selects an answer and clicks the next button
+  - The question area then displays the next question up to a total of 15 questions.
+  - On reaching the 15th the submit button will appear.
+  - The user can navigate back and foreward through the questions to make changes.
+  - Once submit is selected there is no options to navigate
+  - The user is presented with their final score and a customised gif based on their score 
+  - ![quiz-completed](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/quiz-completed.jpg)
+ 
+ - As well as 2 further button options
+    1) See answers which opens in a modal pop up view showing: questions | answer | user answer
+    ![results](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/results-modal.jpg)
+    
+    2) Restart which will start the quiz again
 
-## Release History
+ __navigation__
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  - The navigation buttons are at the bottom of the question-panel
+  - Next, Previous and Submit are displayed based on where the user is in the question order.
+  - If the user is on the last question then submit will appear
+  - If the user is on the first question both previous and submit will be hidden
+  
+  - Future Dev: 
+  - Change the navigation buttons to symbols and contrast the design to the answer buttons.
+  - Update the button design and add alerts to seek confirmation of choice based on how long the user is on this question.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Navigation](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/navigation.jpg)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+ __message-board__
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  - This section will the site owner to provide quiz updates, feedback, notices or random jokes throughout the quiz. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Message-Board](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/message-board.jpg)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+ __The Footer__ 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  - The footer section includes links to the relevant social media sites. The links will open to a new tab to allow easy navigation for the user. 
+  - The footer is valuable to the user as it encourages them to keep connected via social media
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Footer](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/docs/footer-social-links.jpg)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- I would like to add a share option to allow users to copy their score to the clipboard and paste a formatted message to whatsapp groups.
+- I would like to create a seperate js file to store questions to make it easier to load new quizzes.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Testing was done through lighthouse on google chrome
+ __Desktop__
+![Desktop](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/lighthouse_desktop-report_p2.jpg)
+- No errors were found, 100% across the board
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ __Mobile__
+![Mobile](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/lighthouse_mobile-report_p2.jpg)
+- No errors were found, 96% performance
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Device Testing
+- I have tested the site on Chrome and Safari on desktop, as well as Chrome and Browser on a samsung s20 and safari on an ipad 9.7in.
 
-------
+-During tests I found on mobile that the modal that displays the list of answers and questions when completing the quiz would not allow scrolling past the 14th question. To fix this I decrease the content div padding.
 
-## FAQ about the uptime script
+### Bug Fixes
+- On clicking previous it allowed question no to go to zero and minus values. This also caused an error for the create question function which relied on this index.
+- To fix I wrote an if statement to ensure that the first question will display if the number is equal to 0 and hide the previous button to prevent it happening.
 
-**Why have you added this script?**
+- User Answers are  pushed to the question array but the value was the event id and not the answer value.
+- To allow comparision between the answers in the array and user answer I renamed all the ids a,b,c,d to allow comparison within functions between user answer and actual correct answer
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Validator Testing 
 
-**How will this affect me?**
+- HTML
+  - No errors were returned when passing through the official 
+  - ![W3C validator](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/html%20validator.jpg)
+- CSS
+  - No errors were found when passing through the official 
+  - ![(Jigsaw) validator](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/css%20validator.jpg)
+- JS
+  - A few errors regarding template literals not valid in IE6  
+  - ![(Jigsaw) validator](https://github.com/alanmac17/pp2-fridayquiz/blob/main/assets/testing/javascript_validator_results.jpg)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Unfixed Bugs
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+When moving from one question to another using previous/next, the selected answer is highlighted with a white border, if a user changes their answer while it clearly shows the new selection; the old selection remains with a white border until the next/previous button is selected.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Deployment
 
-**So….?**
+This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-**Can I opt out?**
+The live link can be found here - https://alanmac17.github.io/pp2-fridayquiz/
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Credits 
 
-**Anything more?**
+A list of tutorials were reviewed while working through the project. 
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+--Content:
+-Modal Code
+https://w3collective.com/popup-modal-javascript/
+https://www.w3schools.com/howto/howto_css_modals.asp
 
----
+-Some similar container and button css styling fields were used as a template and modified to the site design.
+https://www.codingninjas.com/blog/2021/08/02/how-to-create-a-quiz-app-using-javascript/![image](https://user-images.githubusercontent.com/82409072/167744188-dcc6f8b6-0d99-4aa9-b619-6ec15ea72dbf.png)
 
-Happy coding!
+--Other Site reviewed:
+- Learn JavaScript by Building 7 Games - Full Course (https://www.youtube.com/watch?v=ec8vSKJuZTk)
+- Javascript Tutorial: Make a quiz (https://www.youtube.com/watch?v=C7NsIRhoWuE)
+- Build A Text Adventure Game With JavaScript (https://www.youtube.com/watch?v=R1S_NhKkvGA)
+- Build a Quiz App with HTML, CSS, and JavaScript (https://www.youtube.com/playlist?list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx)
+- Building a Multiple Choice Quiz | Javascript | Tutorial 24 (https://www.youtube.com/watch?v=LQGTb112N_c)
+- Create Quiz Web App using HTML CSS and JavaScript | Quiz App JavaScript (https://www.youtube.com/watch?v=WHHYz8rZmDU)
+- Build A Quiz App With Javascript (Plus ES6 Classes) | Js Project 8 Of 10 (https://www.youtube.com/watch?v=bGQ9sIHZdlo)
+- https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/!
+
+
+### Media
+All gifs were taken from giphy.com
+
+-Responsive Image
+https://ui.dev/amiresponsive?url=https://alanmac17.github.io/pp2-fridayquiz/
+
+-Favicon
+https://favicon.io/favicon-converter/
+
+-Code Beautifier
+https://codebeautify.org/jsvalidate
+
