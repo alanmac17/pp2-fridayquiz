@@ -28,7 +28,7 @@ let quizScore = 0;
 
 // Questions
 let questions = [{
-        question: "Which premier league football club signed Manual Akanji this transfer window?",
+        question: "Which Premier League football club signed Manual Akanji this transfer window?",
         a: "Leeds United",
         b: "Manchester City",
         c: "Brighton",
